@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 @Document(collation = "tb_orders")
 public class OrderEntity {
