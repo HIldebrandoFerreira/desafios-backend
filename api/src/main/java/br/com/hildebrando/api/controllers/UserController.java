@@ -1,6 +1,6 @@
 package br.com.hildebrando.api.controllers;
 
-import br.com.hildebrando.api.domain.User;
+import br.com.hildebrando.api.domain.dto.UserDto;
 import br.com.hildebrando.api.services.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> fyndById(@PathVariable Integer id) {
+    public ResponseEntity<UserDto> fyndById(@PathVariable Integer id) {
 
-        return  ResponseEntity.ok().body(userService.fyndById(id));
+        return  ResponseEntity.ok().body(mapper.map(userService.fyndById(id), UserDto.class));
     }
 }
